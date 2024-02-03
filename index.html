@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Abangkuuhh</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 0;
+            display: inline-block;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style untuk tombol bahasa */
+        .language-buttons {
+            text-align: center;
+        }
+
+        .language-buttons button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <p><strong id="copyText">Copy My Brother 🫡🔥🔝</strong> <button onclick="copyText('Copy My Brother 🫡🔥🔝')">Copy</button></p>
+    </div>
+
+    <div>
+        <p><em id="chooseText">Choose Template Language 🌾🙌🏼🙇‍♂️</em> 
+            <button onclick="copyText('Choose Template Language 🌾🙌🏼🙇‍♂️')">Copy</button>
+        </p>
+    </div>
+    
+    <div>
+        <p><strong id="boldText">give it bold, king 🤙🤙</strong> <button onclick="copyText('give it bold, king 🤙🤙')">Copy</button></p>
+    </div>
+
+    <div>
+        <p><em id="understandText">make it understandable, wakk 🔥🔥🔥</em> <button onclick="copyText('make it understandable, wakk 🔥🔥🔥')">Copy</button></p>
+    </div>
+    
+    <div>
+        <p><strong id="keepGoingText">keep going, my brother 🔥🔝💥</strong> <button onclick="copyText('keep going, my brother 🔥🔝💥')">Copy</button></p>
+    </div>
+
+    <!-- Add text with "Copy" button next to it -->
+    <div>
+        <p><strong id="brotherClassText">brother's class 🔥🫡</strong> <button onclick="copyText('brother\'s class 🔥🫡')">Copy</button></p>
+    </div>
+
+    <div>
+        <p><em id="paddyText">paddy knowledge, my brother 🌾🌾👊🏻💥🔥</em> <button onclick="copyText('paddy knowledge, my brother 🌾🌾👊🏻💥🔥')">Copy</button></p>
+    </div>
+
+    <!-- Language buttons in the center near "paddy knowledge, my brother" -->
+    <div class="language-buttons">
+        <button onclick="changeLanguage('id')">Bahasa Indonesia</button>
+        <button onclick="changeLanguage('en')">English</button>
+    </div>
+
+    <script>
+        var languages = {
+            'en': {
+                'copyText': 'Copy My Brother 🫡🔥🔝',
+                'chooseText': 'Choose Template Language 🌾🙌🏼🙇‍♂️',
+                'boldText': 'give it bold, king 🤙🤙',
+                'understandText': 'make it understandable, wakk 🔥🔥🔥',
+                'keepGoingText': 'keep going, my brother 🔥🔝💥',
+                'brotherClassText': 'brother\'s class 🔥🫡',
+                'paddyText': 'paddy knowledge, my brother 🌾🌾👊🏻💥🔥'
+            },
+            'id': {
+                'copyText': 'Salin Saudaraku 🫡🔥🔝',
+                'chooseText': 'Pilih Bahasa Template 🌾🙌🏼🙇‍♂️',
+                'boldText': 'berikan tebal, king 🤙🤙',
+                'understandText': 'jadikan mudah dimengerti, wakk 🔥🔥🔥',
+                'keepGoingText': 'teruslah, saudaraku 🔥🔝💥',
+                'brotherClassText': 'kelas saudara 🔥🫡',
+                'paddyText': 'pengetahuan padi, saudaraku 🌾🌾👊🏻💥🔥'
+            }
+        };
+
+        function copyText(text) {
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            
+            tempTextArea.select();
+            document.execCommand("copy");
+
+            document.body.removeChild(tempTextArea);
+
+            alert("Text has been copied: " + text);
+        }
+
+        function changeLanguage(lang) {
+            document.getElementById('copyText').innerText = languages[lang]['copyText'];
+            document.getElementById('chooseText').innerText = languages[lang]['chooseText'];
+            document.getElementById('boldText').innerText = languages[lang]['boldText'];
+            document.getElementById('understandText').innerText = languages[lang]['understandText'];
+            document.getElementById('keepGoingText').innerText = languages[lang]['keepGoingText'];
+            document.getElementById('brotherClassText').innerText = languages[lang]['brotherClassText'];
+            document.getElementById('paddyText').innerText = languages[lang]['paddyText'];
+
+            alert("Language has been changed to " + (lang === 'id' ? 'Bahasa Indonesia' : 'English'));
+        }
+    </script>
+
+</body>
+</html>
